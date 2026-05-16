@@ -1,6 +1,6 @@
 name = "pips-worker"
 main = "src/index.ts"
-compatibility_date = "2024-04-05"
+compatibility_date = "2024-12-01"
 
 # [vars]
 # SECRET_KEY will be set via `wrangler secret put`
@@ -9,6 +9,7 @@ GITHUB_OWNER = "0xSatwik"
 GITHUB_REPO = "pip-solver-answer"
 GITHUB_BRANCH = "master"
 GITHUB_PATH = "public/today.json"
+CORS_ORIGINS = "https://pipsanswer.online,https://pipsanswer.vercel.app"
 
 [[d1_databases]]
 binding = "DB"
