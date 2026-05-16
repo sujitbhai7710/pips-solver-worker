@@ -1,0 +1,20 @@
+name = "pips-worker"
+main = "src/index.ts"
+compatibility_date = "2024-04-05"
+
+# [vars]
+# SECRET_KEY will be set via `wrangler secret put`
+[vars]
+GITHUB_OWNER = "0xSatwik"
+GITHUB_REPO = "pip-solver-answer"
+GITHUB_BRANCH = "master"
+GITHUB_PATH = "public/today.json"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "pips-db"
+database_id = "119270fd-c6c2-43e5-8492-6ccfc3012f34" # User: Run `wrangler d1 create pips-db` and update this ID
+
+# Scheduled cron trigger - runs at 12:00 AM UTC every day
+[triggers]
+crons = ["0 0 * * *"]
